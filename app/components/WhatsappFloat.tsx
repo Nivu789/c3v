@@ -4,20 +4,15 @@
 
 import React from "react";
 import { FaWhatsapp, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { waLink, WA_MESSAGES } from "../lib/constants";
 
 const SocialFloat = () => {
-  const whatsappNumber = "918848458738";
-  const whatsappMessage =
-    "Hi, I would like to know more about your services.";
-
   return (
     <div className="fixed top-1/2 right-6 z-50 flex flex-col gap-4">
-      
+
       {/* WhatsApp */}
       <a
-        href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-          whatsappMessage
-        )}`}
+        href={waLink(WA_MESSAGES.general)}
         target="_blank"
         rel="noopener noreferrer"
         className="group text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300"

@@ -2,11 +2,12 @@ import Cursor from "./components/Cursor";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Ticker from "./components/Ticker";
-import Services from "./components/Services";
-import About from "./components/About";
-import Process from "./components/Process";
-import Works from "./components/Works";
-import Contact from "./components/Contact";
+import OffersStrip from "./components/OffersStrip";
+import WhatWeBuilding from "./components/WhatWeBuilding";
+import TechAudit from "./components/TechAudit";
+import RoiCalculator from "./components/RoiCalculator";
+import FreePoc from "./components/FreePoc";
+import AboutContact from "./components/AboutContact";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -17,11 +18,12 @@ export default function Home() {
       <main>
         <Hero />
         <Ticker />
-        <Services />
-        <About />
-        <Process />
-        <Works />
-        <Contact />
+        <OffersStrip />
+        <WhatWeBuilding />
+        <TechAudit />
+        <RoiCalculator />
+        <FreePoc />
+        <AboutContact />
       </main>
       <Footer />
     </>

@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# personal agent notes (keep shared AGENTS.md / CLAUDE.md committed)
+CLAUDE.local.md
+
 # vercel
 .vercel
 

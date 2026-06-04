@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import BookCallButton from "./BookCallButton";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -11,7 +12,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = ["Services", "About", "Process", "Contact"];
+  const links = ["Audit", "Work", "Contact"];
 
   return (
     <nav style={{
@@ -37,11 +38,7 @@ export default function Navbar() {
             onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--muted)")}
           >{l}</a>
         ))}
-        <a href="#contact"
-          style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", padding: "0.5rem 1.25rem", border: "1px solid var(--accent)", color: "var(--accent)", textDecoration: "none", transition: "all 0.2s" }}
-          onMouseEnter={(e) => { (e.target as HTMLElement).style.background = "var(--accent)"; (e.target as HTMLElement).style.color = "#000"; }}
-          onMouseLeave={(e) => { (e.target as HTMLElement).style.background = "transparent"; (e.target as HTMLElement).style.color = "var(--accent)"; }}
-        >Get in Touch</a>
+        <BookCallButton text="Book Free Call" variant="nav" />
       </div>
 
       {/* Mobile Menu Button */}
@@ -65,9 +62,9 @@ export default function Navbar() {
               style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", letterSpacing: "0.15em", color: "var(--text)", textDecoration: "none", textTransform: "uppercase", padding: "0.5rem 0", borderBottom: "1px solid var(--border)" }}
             >{l}</a>
           ))}
-          <a href="#contact" onClick={() => setMenuOpen(false)}
-            style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", padding: "0.85rem 1.5rem", background: "var(--accent)", color: "#000", textDecoration: "none", fontWeight: 700, display: "inline-block", marginTop: "0.5rem" }}
-          >Get in Touch</a>
+          <div onClick={() => setMenuOpen(false)} style={{ marginTop: "0.5rem" }}>
+            <BookCallButton text="Book Free Call" variant="primary" fullWidth />
+          </div>
         </div>
       )}
     </nav>

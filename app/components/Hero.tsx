@@ -1,15 +1,8 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { PopupButton } from "react-calendly";
+import { useRef } from "react";
 
 export default function Hero() {
   const gridRef = useRef<HTMLDivElement>(null);
-
-  const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
-
-  useEffect(() => {
-    setRootElement(document.body);
-  }, []);
 
   // useEffect(() => {
   //   const grid = gridRef.current;
@@ -27,7 +20,7 @@ export default function Hero() {
     <section
       id="hero"
       style={{
-        minHeight: "100vh",
+        minHeight: "64vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -86,44 +79,55 @@ export default function Hero() {
             fontFamily: "var(--font-mono)", fontSize: "0.7rem",
             letterSpacing: "0.25em", color: "var(--muted)", textTransform: "uppercase",
           }}>
-            Software Agency — Est. 2026
+            AI · Automation · Custom Software
           </span>
         </div>
 
         {/* Main headline */}
         <h1 style={{
           fontFamily: "var(--font-display)",
-          fontSize: "clamp(3rem, 12vw, 11rem)",
+          fontSize: "clamp(2.4rem, 8.8vw, 8rem)",
           lineHeight: 0.9, letterSpacing: "0.02em",
           color: "var(--text)", marginBottom: "0.2rem",
-        }}>WE BUILD</h1>
+        }}>BUILD.</h1>
         <h1 style={{
           fontFamily: "var(--font-display)",
-          fontSize: "clamp(3rem, 12vw, 11rem)",
+          fontSize: "clamp(2.4rem, 8.8vw, 8rem)",
           lineHeight: 0.9, letterSpacing: "0.02em",
           color: "transparent", WebkitTextStroke: "1px var(--accent)",
           marginBottom: "0.2rem",
-        }}>SOFTWARE</h1>
+        }}>AUTOMATE.</h1>
         <h1 style={{
           fontFamily: "var(--font-display)",
-          fontSize: "clamp(3rem, 12vw, 11rem)",
+          fontSize: "clamp(2.4rem, 8.8vw, 8rem)",
           lineHeight: 0.9, letterSpacing: "0.02em",
           color: "var(--text)",
-        }}>THAT MOVES.</h1>
+        }}>SCALE.</h1>
 
         {/* Sub-content row */}
         <div className="flex lg:flex-row flex-col flex-wrap gap-8 lg:items-start" style={{ marginTop: "3rem" }}>
           <p style={{
-            fontFamily: "var(--font-body)", fontSize: "1rem",
-            color: "var(--muted)", maxWidth: "380px",
-            lineHeight: 1.7, fontWeight: 300,
+            fontFamily: "var(--font-body)", fontSize: "clamp(1.05rem, 1.7vw, 1.35rem)",
+            color: "var(--muted)", maxWidth: "500px",
+            lineHeight: 1.6, fontWeight: 300,
           }}>
-            C<sup style={{ fontSize: "0.65em" }}>3</sup>V is a collective of
-            engineers and designers who obsess over software craft — from web apps to AI integrations.
+            We help businesses stop wasting time on work that software can do for them —{" "}
+            <span style={{
+              color: "var(--accent)",
+              fontWeight: 500,
+              background: "rgba(0,136,255,0.10)",
+              padding: "0.08em 0.3em",
+              borderRadius: "4px",
+              boxDecorationBreak: "clone",
+              WebkitBoxDecorationBreak: "clone",
+            }}>
+              from websites and apps to AI and automation. The full stack, under one roof.
+            </span>
           </p>
 
           <div className="grid md:grid-cols-2 gap-4">
-            <div
+            <a
+  href="#audit"
   style={{
     fontFamily: "var(--font-mono)",
     fontSize: "0.75rem",
@@ -134,6 +138,7 @@ export default function Hero() {
     background:
       "linear-gradient(135deg, rgba(0,136,255,0.18), rgba(0,136,255,0.05))",
     color: "#fff",
+    textDecoration: "none",
     transition: "all 0.35s cubic-bezier(0.22, 1, 0.36, 1)",
     display: "inline-flex",
     alignItems: "center",
@@ -197,30 +202,10 @@ export default function Hero() {
     }}
   />
 
-  {rootElement && (
-    <PopupButton
-      url="https://calendly.com/c3v-solutions/30min"
-      rootElement={rootElement}
-      text="Book a Call"
-      styles={{
-        backgroundColor: "transparent",
-        border: "none",
-        padding: 0,
-        margin: 0,
-        color: "inherit",
-        fontSize: "inherit",
-        fontWeight: "inherit",
-        fontFamily: "inherit",
-        letterSpacing: "inherit",
-        textTransform: "inherit",
-        cursor: "pointer",
-        width: "100%",
-      }}
-    />
-  )}
-</div>
+  Get Your Free Tech Audit →
+</a>
             <a
-              href="#services"
+              href="#work"
               style={{
                 fontFamily: "var(--font-mono)", fontSize: "0.75rem",
                 letterSpacing: "0.15em", textTransform: "uppercase",
@@ -239,37 +224,8 @@ export default function Hero() {
                 (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
                 (e.currentTarget as HTMLElement).style.color = "var(--muted)";
               }}
-            >Our Services</a>
+            >See Our Work</a>
           </div>
-        </div>
-
-        {/* Stats row */}
-        <div className="stats-row">
-          {/* {[
-            { num: "5+", label: "Core Technologies" },
-            { num: "∞", label: "Ideas Per Day" },
-            { num: "1", label: "Focus: Your Product" },
-          ].map((s, i) => (
-            <div
-              key={i}
-              style={{
-                flex: "1", minWidth: "120px",
-                paddingRight: "2rem",
-                borderRight: i < 2 ? "1px solid var(--border)" : "none",
-                paddingLeft: i > 0 ? "2rem" : "0",
-              }}
-            >
-              <div style={{
-                fontFamily: "var(--font-display)", fontSize: "2.5rem",
-                color: "var(--accent)", lineHeight: 1,
-              }}>{s.num}</div>
-              <div style={{
-                fontFamily: "var(--font-mono)", fontSize: "0.65rem",
-                color: "var(--muted)", letterSpacing: "0.15em",
-                textTransform: "uppercase", marginTop: "0.4rem",
-              }}>{s.label}</div>
-            </div>
-          ))} */}
         </div>
       </div>
 
