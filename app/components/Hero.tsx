@@ -27,6 +27,8 @@ export default function Hero() {
         position: "relative",
         overflow: "hidden",
         padding: "3rem 2rem",
+        maxWidth:"1440px",
+        margin:"auto"
       }}
     >
       {/* Animated grid background */}
