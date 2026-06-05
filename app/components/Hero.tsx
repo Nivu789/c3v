@@ -20,13 +20,13 @@ export default function Hero() {
     <section
       id="hero"
       style={{
-        minHeight: "64vh",
+        minHeight: "72vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         position: "relative",
         overflow: "hidden",
-        padding: "0 2rem",
+        padding: "3rem 2rem",
       }}
     >
       {/* Animated grid background */}
